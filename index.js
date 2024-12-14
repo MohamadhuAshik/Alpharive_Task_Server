@@ -26,6 +26,10 @@ const dbRun = async () => {
 
 dbRun()
 
+app.get("/", (req, res) => {
+    res.send("Hello")
+})
+
 app.use("/user", userRoutes)
 app.use("/message", messageRoutes)
 
