@@ -13,7 +13,7 @@ app.use(express.json())
 
 const PORT = process.env.PORT || 4001
 
-const connectionString = `mongodb://localhost:27017/Alpharive_Interview`
+const connectionString = `mongodb+srv://mohamadashik268:ashik%402001@cluster0.eryzo.mongodb.net/Alpharive_Interview`
 
 const dbRun = async () => {
     try {

@@ -6,7 +6,7 @@ const verifyToken = async (req, res, next) => {
         if (!token) {
             return res.status(409).json({ message: "Access Denied" })
         }
-        const decodedToken = jwt.verify(token, "sdssdewefer")
+        const decodedToken = jwt.verify(token, process.env.JWT_SECRET_KEY)
         req.id = decodedToken.id
         // console.log(" req.id", req.id)
         next()
