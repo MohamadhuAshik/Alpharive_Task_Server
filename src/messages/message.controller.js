@@ -1,3 +1,4 @@
+const userModel = require("../user/user.model");
 const messageModel = require("./message.model");
 const moment = require("moment")
 
@@ -15,8 +16,9 @@ module.exports = {
                 content: content,
                 createdat: moment().format('YYYY-MM-DD HH:mm:ss')
             });
+
             await message.save();
-            res.status(200).json({ response_code: 200, message: "Message save SuccessFully", data: content })
+            res.status(200).json({ response_code: 200, message: "Message save SuccessFully" })
         } catch (err) {
             console.log(err)
             res.status(500).json({ message: "Internal Server Error" })
