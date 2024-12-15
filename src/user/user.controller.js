@@ -51,7 +51,8 @@ module.exports = {
                 role: "user"
             }
 
-            const token = jwt.sign(payload, process.env.JWT_SECRET_KEY)
+            const jwt_key = process.env.JWT_SECRET_KEY || "sdssdewefer"
+            const token = jwt.sign(payload, jwt_key)
             res.status(200).json({ response_code: 200, message: "Login SuccessFully", token: token })
 
         } catch (err) {

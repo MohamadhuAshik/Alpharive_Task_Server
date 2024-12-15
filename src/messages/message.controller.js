@@ -16,7 +16,7 @@ module.exports = {
                 createdat: moment().format('YYYY-MM-DD HH:mm:ss')
             });
             await message.save();
-            res.status(200).json({ response_code: 200, message: "Message save SuccessFully" })
+            res.status(200).json({ response_code: 200, message: "Message save SuccessFully", data: content })
         } catch (err) {
             console.log(err)
             res.status(500).json({ message: "Internal Server Error" })
